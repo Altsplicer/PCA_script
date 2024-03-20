@@ -1,7 +1,7 @@
 
 # [Franco](https://github.com/altsplicer) / [***DEseq2 PCA***](https://altsplicer.github.io/PCA_script/PCA_RMD.html)
 
-[![.img/logo_DEseq2.jpg](.img/logo_DEseq2.jpg)](#nolink)
+[![.img/logo_DEseq2.png](.img/logo_DEseq2.png)](#nolink)
 [![.img/gglogo.png](.img/gglogo.png)](#nolink)
 
 ## Overview
