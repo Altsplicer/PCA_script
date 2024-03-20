@@ -2,6 +2,7 @@
 # [Franco](https://github.com/altsplicer) / [***DEseq2 PCA***](https://altsplicer.github.io/PCA_script/PCA_RMD.html)
 
 [![.img/logo_DEseq2.jpg](.img/logo_DEseq2.jpg)](#nolink)
+[![.img/gglogo.png](.img/gglogo.png)](#nolink)
 
 ## Overview
 This a walk-through of the PCA plot script used for Met Cancer project in the Hertel and Kaiser lab. There is a built in PCA command in the DEseq2 R package. For a Deseq2 tutorial/walkthrough see https://altsplicer.github.io/DEseq2_Script/DESEQ2_met.html. You can also see this walk-through via this [link](https://altsplicer.github.io/Methionine-PCA/PCA_RMD.html). PCA plots are used as QC check in your RNA-seq analysis. To explore the similarity of our samples and identify outliers.For a more indepth view of QC checks such as PCA plots and unsupervised clustering see the following [link](https://hbctraining.github.io/DGE_workshop/lessons/03_DGE_QC_analysis.html).
