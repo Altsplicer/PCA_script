@@ -1,7 +1,7 @@
 
 # [Franco](https://github.com/altsplicer) / [***DEseq2 PCA***](https://altsplicer.github.io/PCA_script/PCA_RMD.html)
 
-[![./logo_DEseq2.jpg](./logo_DEseq2.jpg)](#nolink)
+[![.img/logo_DEseq2.jpg](.img/logo_DEseq2.jpg)](#nolink)
 
 ## Overview
 This a walk-through of the PCA plot script used for Met Cancer project in the Hertel and Kaiser lab. There is a built in PCA command in the DEseq2 R package. For a Deseq2 tutorial/walkthrough see https://altsplicer.github.io/DEseq2_Script/DESEQ2_met.html. You can also see this walk-through via this [link](https://altsplicer.github.io/Methionine-PCA/PCA_RMD.html). PCA plots are used as QC check in your RNA-seq analysis. To explore the similarity of our samples and identify outliers.For a more indepth view of QC checks such as PCA plots and unsupervised clustering see the following [link](https://hbctraining.github.io/DGE_workshop/lessons/03_DGE_QC_analysis.html).
@@ -81,7 +81,7 @@ numeric_idx = sapply(counts, mode) == 'numeric'
 counts[numeric_idx] = round(counts[numeric_idx], 0)
 head(counts, 5)
 ```
-[![./fig1.jpg](./fig1.jpg)](#nolink)
+[![.img/fig1.jpg](.img/fig1.jpg)](#nolink)
 
 # Build the dataset names and conditions
 ```{r}
@@ -92,16 +92,16 @@ colData = data.frame(samples=samples, condition=condition)
 # You can view the dataset by calling the following
 samples
 ```
-[![./fig2.jpg](./fig2.jpg)](#nolink)
+[![.img/fig2.jpg](.img/fig2.jpg)](#nolink)
 ```{r}
 condition
 ```
-[![./fig3.jpg](./fig3.jpg)](#nolink)
+[![.img/fig3.jpg](.img/fig3.jpg)](#nolink)
 
 ```{r}
 colData
 ```
-[![./fig4.jpg](./fig4.jpg)](#nolink)
+[![.img/fig4.jpg](.img/fig4.jpg)](#nolink)
 
 # Create DESEq2 dataset.
 ```{r}
@@ -109,13 +109,13 @@ colData
 dds = DESeqDataSetFromMatrix(countData=counts, colData=colData, design = ~condition)
 
 ```
-[![./fig5.jpg](./fig5.jpg)](#nolink)
+[![.img/fig5.jpg](.img/fig5.jpg)](#nolink)
 
 # Run deseq2.
 ```{r}
 dds = DESeq(dds)
 ```
-[![./fig6.jpg](./fig6.jpg)](#nolink)
+[![.img/fig6.jpg](.img/fig6.jpg)](#nolink)
 
 ## Transform counts for PCA
 vst this will transform your counts for data visualization.
@@ -132,8 +132,8 @@ vsdata <- vst(dds, blind=TRUE)
 ```{r}
 plotPCA(vsdata, intgroup=c("condition"))
 ```
-[![./fig7.jpg](./fig7.jpg)](#nolink)
-[![./fig8.jpg](./fig8.jpg)](#nolink)
+[![.img/fig7.jpg](.img/fig7.jpg)](#nolink)
+[![.img/fig8.jpg](.img/fig8.jpg)](#nolink)
 
 ## Further Customization
 
@@ -145,7 +145,7 @@ pcaData <- plotPCA(vsdata, intgroup=c("condition"), returnData=TRUE)
 #retrieve the percent variance for PC1 and PC2 in the PCA plot
 percentVar <- round(100 * attr(pcaData, "percentVar"))
 ```
-[![./fig9.jpg](./fig9.jpg)](#nolink)
+[![.img/fig9.jpg](.img/fig9.jpg)](#nolink)
 
 Plot the PCA plot using ggplot and the "pcaData" data frame made from the plotPCA command. 
 ```{r}
@@ -159,7 +159,7 @@ ggplot(pcaData, aes(PC1, PC2, color=condition)) +
   theme(axis.text.y=element_text(size=12)) + theme(legend.text=element_text(size=10))
  
 ```
-[![./fig10.jpg](./fig10.jpg)](#nolink)
+[![.img/fig10.jpg](.img/fig10.jpg)](#nolink)
 
 
 ## Acknowledgments
